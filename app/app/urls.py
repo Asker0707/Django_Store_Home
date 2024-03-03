@@ -20,13 +20,13 @@ from django.urls import include, path
 from django.views import static
 from django.conf.urls.static import static
 from app.settings import DEBUG
-from django.conf import settings
+from app import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls', namespace='main')),
     path('catalog/', include('goods.urls', namespace='catalog')),
-    
+    path('user/', include('users.urls', namespace='user')),
 ] 
 
 if DEBUG:
